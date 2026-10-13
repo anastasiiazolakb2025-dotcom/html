@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+dist/
+*.log
+
+# Vite
+.vite/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
