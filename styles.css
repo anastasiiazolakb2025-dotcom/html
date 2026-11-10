@@ -67,3 +67,104 @@ h2 {
   padding-bottom: 0.5rem;
   margin-top: 0;
 }
+/* =====================================================
+   Лабораторна №4 — стилі для JavaScript-функціоналу
+   ===================================================== */
+
+/* --- Перемикач теми --- */
+#main-header { position: relative; }
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #3498db;
+  border-radius: 20px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.theme-toggle:hover { background-color: #3498db; color: white; }
+
+/* --- Відгуки --- */
+.comments-section { grid-column: 1 / -1; }
+#comments-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.comment-card {
+  padding: 1rem;
+  border-left: 4px solid #3498db;
+  background-color: #f8fafc;
+  border-radius: 6px;
+}
+.comment-card h3 { margin: 0 0 0.25rem; font-size: 1rem; text-transform: capitalize; }
+.comment-email { font-size: 0.85rem; }
+.comment-card p { margin-bottom: 0; }
+
+/* --- Інформація з localStorage у футері --- */
+.storage-block { max-width: 900px; margin: 1rem auto 0; text-align: left; }
+.storage-block h3 { text-align: center; }
+.storage-list { list-style: none; padding: 0; font-size: 0.85rem; word-break: break-word; }
+.storage-list li { padding: 0.25rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+
+/* --- Модальне вікно --- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal.open { display: flex; }
+.modal-content {
+  position: relative;
+  width: min(90%, 450px);
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  border: none;
+  background: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: inherit;
+}
+.contact-form { display: flex; flex-direction: column; gap: 0.4rem; }
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}
+.contact-form button {
+  margin-top: 0.75rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.contact-form button:hover { background-color: #2c80b4; }
+
+/* --- Нічна тема --- */
+body.dark-theme { background-color: #121826; color: #e2e8f0; }
+body.dark-theme #main-header,
+body.dark-theme .resume-section,
+body.dark-theme .modal-content { background-color: #1e293b; border-color: #334155; color: #e2e8f0; }
+body.dark-theme h2 { color: #93c5fd; }
+body.dark-theme .comment-card { background-color: #0f172a; }
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea { background-color: #0f172a; color: #e2e8f0; border-color: #475569; }

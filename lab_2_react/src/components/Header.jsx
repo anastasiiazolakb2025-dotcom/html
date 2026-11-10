@@ -1,6 +1,13 @@
-function Header() {
+function Header({ theme, onToggleTheme }) {
   return (
-    <header className="flex flex-col items-center bg-slate-900 text-white p-8 shadow-lg rounded-b-2xl">
+    <header className="relative flex flex-col items-center bg-slate-900 text-white p-8 shadow-lg rounded-b-2xl">
+      <button
+        type="button"
+        onClick={onToggleTheme}
+        className="absolute top-4 right-4 px-4 py-2 rounded-full border-2 border-blue-400 text-sm hover:bg-blue-400 hover:text-slate-900 transition-colors"
+      >
+        {theme === 'dark' ? '☀️ Денна тема' : '🌙 Нічна тема'}
+      </button>
       <h1 className="text-4xl font-bold mb-2 tracking-wide text-blue-400">Зьола Анастасія</h1>
       <p className="text-lg text-gray-300 mb-4">Студентка спеціальності «Кібербезпека»</p>
       <div className="flex gap-4 text-sm">
